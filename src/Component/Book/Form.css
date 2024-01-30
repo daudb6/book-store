@@ -15,7 +15,7 @@
 }
 .form-description input {
   background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 .form-description :nth-child(1) {
   border: none;
@@ -36,10 +36,9 @@
   background-color: #0290ff;
 }
 .line-bar {
-  width: 80%;
-  margin: auto;
-  opacity: 1;
-  border: 1px solid;
+  border-bottom: 1px solid #e8e8e8;
+  margin: 0 10%;
+  padding-top: 2.6rem;
 }
 .scale-in-hor-left {
   animation: scale-in-hor-left 1.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
@@ -62,10 +61,10 @@
   .form-description {
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 1fr 1fr 1fr 2fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-gap: 10px;
     padding: 1rem 10%;
-    margin-top: 1rem;
+    margin-top: 2rem;
   }
   .form-heading h2 {
     font-size: 3rem;
@@ -73,5 +72,10 @@
     align-items: center;
     justify-content: center;
     margin-left: 1rem;
+    margin-top: 1.2rem;
+  }
+  .form-description input {
+    padding: 10px;
+    border-radius: 10px;
   }
 }

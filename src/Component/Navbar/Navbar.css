@@ -34,14 +34,25 @@
   font-size: 4rem;
 }
 
-@media (max-width: 560px) {
+/* @media (max-width: 560px) {
   .icon {
     display: none;
   }
+} */
+@media (max-width: 768px) {
   .navbar {
-    padding: 1.5rem 6%;
+    padding: 1.5rem 10%;
   }
   .navbar h1 {
+    font-size: 1.7rem;
+  }
+  .navbar a {
+    font-size: 10px;
+  }
+  .icon {
     font-size: 2rem;
+  }
+  .header {
+    gap: 1.5rem;
   }
 }
