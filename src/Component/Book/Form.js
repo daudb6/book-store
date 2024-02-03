@@ -1,7 +1,14 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './Form.css'
 
-export const Form = () => {
+export const Form = ({title,author,category,handle}) => {
+
+  
+
+  
+
+  
+  
   return (
     <>
     <div className='line-bar'></div>
@@ -11,14 +18,16 @@ export const Form = () => {
       </div>
       <div className='form-details'>
         <div className='form-description'>
-        <input type="text"  placeholder='Add Title' /> 
-        <input type="text"  placeholder='Add Author' /> 
-        <input type="text"  placeholder='Add Category' /> 
+    <input  onChange={(e) => title(e.target.value) } type="text"  placeholder='Add Title' /> 
+    <input  onChange={(e) => author(e.target.value)} type="text"  placeholder='Add Author' /> 
+    <input onChange={(e) => category(e.target.value)} type="text"  placeholder='Add Category' /> 
 
-          <button className='button1'>Add Book</button>
+          <button onClick={handle} className='button1'>Add Book</button>
         </div>
       </div>
     </div>
     </>
   )
 }
+
+

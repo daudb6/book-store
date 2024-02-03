@@ -47,13 +47,14 @@ import React from 'react';
 import './BookList.css';
 import { Progress } from '../Progress';
 
-export const BookList = ({ name, title, category }) => {
+export const BookList = ({ name, author, category }) => {
+  console.log(name)
   return (
     <div className='bookstore scale-in-hor-left'>
       <div className='store-info'>
         <div className='info'>
           <h2>{category}</h2>
-          <h1>{title}</h1>
+          <h1>{author}</h1>
           <span>{name}</span>
         </div>
         <div className='buttons'>
