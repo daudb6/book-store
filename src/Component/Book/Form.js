@@ -2,13 +2,8 @@ import React, {useState} from 'react'
 import './Form.css'
 
 export const Form = ({title,author,category,handle}) => {
-
   
-
-  
-
-  
-  
+ 
   return (
     <>
     <div className='line-bar'></div>
@@ -18,9 +13,10 @@ export const Form = ({title,author,category,handle}) => {
       </div>
       <div className='form-details'>
         <div className='form-description'>
-    <input  onChange={(e) => title(e.target.value) } type="text"  placeholder='Add Title' /> 
-    <input  onChange={(e) => author(e.target.value)} type="text"  placeholder='Add Author' /> 
-    <input onChange={(e) => category(e.target.value)} type="text"  placeholder='Add Category' /> 
+
+
+<input  onChange={(e) => title(e.target.value) } type="text"  placeholder='Add Title' /> <input   onChange={(e) => author(e.target.value)}type="text"  placeholder='Add Author' /> 
+<input  onChange={(e) => category(e.target.value) }type="text"  placeholder='Add Category' /> 
 
           <button onClick={handle} className='button1'>Add Book</button>
         </div>

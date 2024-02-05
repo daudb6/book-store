@@ -11,34 +11,27 @@ import { joinPaths } from '@remix-run/router';
   let [title,setTitle] = useState('')
   let [author,setAuthor] = useState('')
   let [category,setCategory] = useState('')
-  let [dataArray,setDataArray] = useState([])
-  
+  let [data,setData] = useState([])
   let handleData = () => {
-     let data= {
-      title:title,
-      author:author,
-      category:category
-    }
-    setDataArray((prevState) =>  [...prevState,data])
+    setData ((prevState) => {
+      return [...prevState,{title,author,category}]
 
+    })
     
+}
 
-  }
   
- 
   return (
     <>
-    {dataArray.map((e) => {
+    {data.map((e) => {
       return(
         <BookList  name = {e.title} author={e.author} category={e.category}/>
-
       )
-     
     })}
     
-   
+        
                  
-    <Form title={setTitle} author={setAuthor} category={setCategory} handle={handleData} /> 
+    <Form title={setTitle} author = {setAuthor} category={setCategory} handle={handleData} /> 
     </>
   )
 }
