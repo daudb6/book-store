@@ -1,7 +1,12 @@
-import React, {useState} from 'react'
+import React, {useContext, useState} from 'react'
 import './Form.css'
+import { bookstore } from './BookStore'
 
-export const Form = ({title,author,category,handle}) => {
+
+export const Form = () => {
+  const {setTitle,setAuthor,setCategory,handleData} = useContext(bookstore);
+ 
+
   
  
   return (
@@ -15,15 +20,13 @@ export const Form = ({title,author,category,handle}) => {
         <div className='form-description'>
 
 
-<input  onChange={(e) => title(e.target.value) } type="text"  placeholder='Add Title' /> <input   onChange={(e) => author(e.target.value)}type="text"  placeholder='Add Author' /> 
-<input  onChange={(e) => category(e.target.value) }type="text"  placeholder='Add Category' /> 
+<input  onChange={(e) => setTitle(e.target.value) } type="text"  placeholder='Add Title' /> <input   onChange={(e) => setAuthor(e.target.value)}type="text"  placeholder='Add Author' /> 
+<input  onChange={(e) => setCategory(e.target.value) }type="text"  placeholder='Add Category' /> 
 
-          <button onClick={handle} className='button1'>Add Book</button>
+          <button onClick={handleData} className='button1'>Add Book</button>
         </div>
       </div>
     </div>
     </>
   )
 }
-
-
