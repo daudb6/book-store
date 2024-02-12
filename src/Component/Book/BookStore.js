@@ -1,44 +1,22 @@
-import React,{createContext, useEffect, useState} from 'react'
+import React from 'react'
 import { BookList } from './BookList'
 import { Form } from './Form';
-
-
-
- 
-export const bookstore = createContext()
+import { useSelector } from 'react-redux';
 
  const BookStore = () => {
-  let [title,setTitle] = useState('')
-  let [author,setAuthor] = useState('')
-  let [category,setCategory] = useState('')
-  let [data,setData] = useState([])
-  let handleData = () => {
-    setData ((prevState) => {
-      return [...prevState,{title,author,category}]
-
-    })
-    
-}
-
-  
+  const data = useSelector((a) =>a.bookreducer.book)
+  console.log(data)
+   
   return (
-    <>
-    {data.map((e) => {
+    <>   
+    {data.map((dat,i) => {
+      
       return(
-        <BookList  name = {e.title} author={e.author} category={e.category}/>
+      <BookList  name = {dat.title} author={dat.author} category={dat.category} id = {i}/>
       )
     })}
-    
-        
-     
-    
-  
-     <bookstore.Provider value={{setTitle, setAuthor, setCategory ,handleData}}>           
+                  
     <Form  />
-    </bookstore.Provider>
-   
-   
-    
     </>
   )
 }
